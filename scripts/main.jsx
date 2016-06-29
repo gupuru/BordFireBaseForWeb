@@ -1,4 +1,5 @@
 var React = require("react");
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var allData = [];
 
@@ -35,7 +36,9 @@ var Main = React.createClass({
     });
 
     return (
-      <div>{upperItems}</div>
+      <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={150} transitionLeaveTimeout={130}>
+        {upperItems}
+      </ReactCSSTransitionGroup>
     );
   }
 });
